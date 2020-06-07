@@ -88,12 +88,6 @@ public class MockTempEntityDatabase {
         e.setSubEntityBases(sb);
     }
 
-    public EntityBase delete(String id) {
-        EntityBase entityToDelete = idToEntity.getOrDefault(id, null);
-        idToEntity.remove(id);
-        return entityToDelete;
-    }
-
     public Set<Entity> getAllEntities() {
         return new HashSet<>(idToEntity.values());
     }
