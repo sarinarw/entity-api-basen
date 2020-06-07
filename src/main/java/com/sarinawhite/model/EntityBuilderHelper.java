@@ -18,6 +18,8 @@ public class EntityBuilderHelper {
             EntityBase existingEntity = db.get(request.getEntityId());
             if (existingEntity != null) {
                 entityType = existingEntity.getEntityType();
+            } else {
+                throw new IllegalArgumentException("entity does not exist, id=" + request.getEntityId());
             }
         } else {
             entityType = request.getEntityType();

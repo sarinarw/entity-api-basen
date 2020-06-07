@@ -78,7 +78,7 @@ public class EntityVerticle extends AbstractVerticle {
             r.response().end(successMessage());
         } catch (IllegalArgumentException e) {
             e.printStackTrace();
-            r.response().setStatusCode(400).end(failureMessage("bad request"));
+            r.response().setStatusCode(400).end(failureMessage("bad request: " + e.getMessage()));
         } catch (Exception e) {
             e.printStackTrace();
             r.response().setStatusCode(500).end(failureMessage("internal server error"));
@@ -97,7 +97,7 @@ public class EntityVerticle extends AbstractVerticle {
     }
 
     private String toJsonString(Object obj) {
-        if (obj == null) return null;
+        if (obj == null) return "{}";
         return JsonObject.mapFrom(obj).toString();
     }
 }
