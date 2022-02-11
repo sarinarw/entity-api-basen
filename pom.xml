@@ -7,7 +7,7 @@
     <artifactId>entity-api-basen</artifactId>
     <version>1.0</version>
     <properties>
-        <vertx.version>3.9.1</vertx.version>
+        <vertx.version>3.9.4</vertx.version>
         <guice.version>4.0</guice.version>
         <exec.mainClass>com.sarinawhite.Launcher</exec.mainClass>
     </properties>
